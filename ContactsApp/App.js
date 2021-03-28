@@ -3,7 +3,7 @@ import ContactCard from './components/ContactCard'
 
 import {
 	View,
-	StyleSheet
+	StyleSheet,
 } from 'react-native';
 
 const styles = StyleSheet.create({

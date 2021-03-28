@@ -1,10 +1,11 @@
-import React, {useState, useRef} from 'react';
+import React, {useState} from 'react';
 
 import {
 	TouchableOpacity,
 	StyleSheet,
 	Text,
 	View,
+	Image
 } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -31,7 +32,6 @@ const styles = StyleSheet.create({
 		color: '#00ADD3'
 	},
 	iconStyle: {
-		backgroundColor: 'red',
 		height: 64,
 		width: 64,
 		borderRadius: 30
@@ -56,6 +56,8 @@ const styles = StyleSheet.create({
 const App = ({name, phone, address, mail, uri}) => {
 	const [isOpen, setIsOpen] = useState(false)
 
+	console.log(uri)
+
 	const toggleCard = () => {
 		setIsOpen(!isOpen);
 	}
@@ -64,7 +66,10 @@ const App = ({name, phone, address, mail, uri}) => {
 		<TouchableOpacity onPress={toggleCard}>
 			<View style={styles.cardStyle}>
 				<View style={styles.avatarWrapper}>
-					<View style={styles.iconStyle}/>
+					<Image
+						source={{uri: uri}}
+						style={styles.iconStyle}
+					/>
 				</View>
 				<View style={styles.contentWrapper}>
 					<View style={styles.titleBox}>
