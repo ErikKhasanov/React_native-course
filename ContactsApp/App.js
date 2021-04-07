@@ -1,76 +1,32 @@
-import React from 'react';
-import ContactCard from './components/ContactCard'
-
-import {
-	View,
-	StyleSheet,
-} from 'react-native';
-
-const styles = StyleSheet.create({
-	root: {
-		flex: 1,
-		justifyContent: 'center',
-		alignItems: 'center',
-	},
-})
-
-const cardData = [
-	{
-		name: 'Laenne Graham',
-		phone: '010-692-6593 * 09125',
-		address: '53198-4257, South Elvis, Hoeger Mall, Apt. 692',
-		mail: 'graham@yahoo.com',
-		uri: 'https://reactnative.dev/img/tiny_logo.png',
-	},
-	{
-		name: 'Laenne Graham',
-		phone: '010-692-6593 * 09125',
-		address: '53198-4257, South Elvis, Hoeger Mall, Apt. 692',
-		mail: 'graham@yahoo.com',
-		uri: 'https://reactnative.dev/img/tiny_logo.png',
-	},
-	{
-		name: 'Laenne Graham',
-		phone: '010-692-6593 * 09125',
-		address: '53198-4257, South Elvis, Hoeger Mall, Apt. 692',
-		mail: 'graham@yahoo.com',
-		uri: 'https://reactnative.dev/img/tiny_logo.png',
-	},
-	{
-		name: 'Laenne Graham',
-		phone: '010-692-6593 * 09125',
-		address: '53198-4257, South Elvis, Hoeger Mall, Apt. 692',
-		mail: 'graham@yahoo.com',
-		uri: 'https://reactnative.dev/img/tiny_logo.png',
-	},
-	{
-		name: 'Laenne Graham',
-		phone: '010-692-6593 * 09125',
-		address: '53198-4257, South Elvis, Hoeger Mall, Apt. 692',
-		mail: 'graham@yahoo.com',
-		uri: 'https://reactnative.dev/img/tiny_logo.png',
-	},
-]
-
+import React, { useState } from 'react';
+import Layout from './src/components/Layout';
+import Page1 from './src/pages/Page1';
+import Page2 from './src/pages/Page2';
+import Page3 from './src/pages/Page3';
 
 const App = () => {
-	const renderCards = () => {
-	 return cardData.map((item, index) => (
-			<ContactCard
-				name={item.name}
-				phone={item.phone}
-				address={item.address}
-				mail={item.mail}
-				uri={item.uri}
-				key={index}
-			/>
-		))
-	}
-	return (
-		<View style={styles.root}>
-			{renderCards()}
-		</View>
-	);
+  const [activePage, setActivePage] = useState(0);
+  switch (activePage) {
+    case 0:
+      return (
+        <Layout activePage={activePage} setActivePage={setActivePage}>
+          <Page1 />
+        </Layout>
+      );
+    case 1:
+      return (
+        <Layout activePage={activePage} setActivePage={setActivePage}>
+          <Page2 setActivePage={setActivePage} />
+        </Layout>
+      );
+    case 2:
+      return (
+        <Layout activePage={activePage} setActivePage={setActivePage}>
+          <Page3 />
+        </Layout>
+      );
+    default:
+  }
 };
 
 export default App;
