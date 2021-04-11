@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import Layout from './src/components/Layout';
+import Layout from './src/layout';
 import Page1 from './src/pages/Page1';
 import Page2 from './src/pages/Page2';
 import Page3 from './src/pages/Page3';
 
 const App = () => {
-  const [activePage, setActivePage] = useState(0);
+  const [activePage, setActivePage] = useState(2);
   switch (activePage) {
     case 0:
       return (

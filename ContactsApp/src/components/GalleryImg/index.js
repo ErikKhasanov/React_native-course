@@ -1,12 +1,14 @@
 import React from 'react';
-import { StyleSheet, View, Image, Text } from 'react-native';
+import { StyleSheet, View, Image, Text, TouchableOpacity } from 'react-native';
 
 const styles = StyleSheet.create({
   root: {
     borderColor: '#444444',
     borderWidth: 1,
     borderRadius: 15,
-    padding: 12
+    padding: 12,
+    marginBottom: 20,
+    marginTop: 20
   },
   img: {
     minWidth: '100%',
@@ -18,11 +20,13 @@ const styles = StyleSheet.create({
   }
 });
 
-const GalleryImg = ({ img, desc }) => {
+const GalleryImg = ({ img, desc, imgHandler }) => {
   return (
     <View style={styles.root}>
-      <Image source={{ uri: img }} style={styles.img} />
-      <Text style={styles.description}>{desc}</Text>
+      <TouchableOpacity onPress={() => imgHandler(img)}>
+        <Image source={{ uri: img }} style={styles.img} />
+        <Text style={styles.description}>{desc}</Text>
+      </TouchableOpacity>
     </View>
   );
 };

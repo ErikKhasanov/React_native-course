@@ -1,13 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import arrowIcon from '../../assets/arrow.png';
+import SelectAlbum from '../SelectAlbum';
 
 const styles = StyleSheet.create({
   root: {
     position: 'absolute',
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     top: 20,
     left: 0,
     right: 0
@@ -18,15 +19,13 @@ const styles = StyleSheet.create({
     fontWeight: '600'
   },
   back: {
-    position: 'absolute',
     alignItems: 'center',
     justifyContent: 'center',
-    top: 0,
-    left: 20,
     height: 36,
     width: 36,
     borderRadius: 50,
-    backgroundColor: '#00ADD3'
+    backgroundColor: '#00ADD3',
+    marginRight: 35
   },
   img: {
     width: 20,
@@ -49,6 +48,7 @@ const Header = ({ activePage, pagesArray, setActivePage }) => {
         </TouchableOpacity>
       )}
       <Text style={[styles.pagesName, dynamicStyle()]}>{pagesArray[activePage]}</Text>
+      {activePage === 2 && <SelectAlbum />}
     </View>
   );
 };

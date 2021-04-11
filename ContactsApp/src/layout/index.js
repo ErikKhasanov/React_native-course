@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import Header from '../Header';
-import TapBar from '../TapBar';
+import Header from '../components/Header';
+import TapBar from '../components/TapBar';
 
 const styles = StyleSheet.create({
   root: {

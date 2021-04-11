@@ -8,7 +8,7 @@ const Page1 = () => {
   const [cardData, setCardData] = useState('');
 
   useEffect(() => {
-    fetch('https://randomuser.me/api/?results=50')
+    fetch('https://randomuser.me/api/?results=5')
       .then((response) => response.json())
       .then((json) => setCardData(json.results))
       .catch((error) => {
